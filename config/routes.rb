@@ -4,11 +4,21 @@ Rails.application.routes.draw do
   
   get "/login" => 'users#login'
   
-  get "/users/new" => "users#new"
+  post "/authenticate_login" => 'users#authenticate_login'
   
-  # get "/edit_profile" =>
-  #
-  # get "/delete_profile" =>
+  get "/users/new" => "users#new_form"
+  
+  post "/users" => "users#new"
+  
+  get "/delete_profile" => "users#delete"
+
+  delete "/confirm_delete" => "users#confirm_delete"
+    
+  get "/edit_profile" => "users#edit_profile"
+  
+  put "/users/@user.id" => "users#edited_profile"
+
+
   
   
   # The priority is based upon order of creation: first created -> highest priority.

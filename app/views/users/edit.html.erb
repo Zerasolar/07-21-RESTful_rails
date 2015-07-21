@@ -5,7 +5,7 @@
 </div>
 
 <div>
-  <%= form_tag("/users/<%= @user.id %>", method: "post") do %>
+  <%= form_tag("/users/@user.id", method: "post") do %>
     <h3>Email:</h3>
     <input type="text" name="users[email]" value="<%= @user.email %>">
     <h3>Password:</h3>
