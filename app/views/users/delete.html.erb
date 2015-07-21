@@ -1,0 +1,9 @@
+<div>
+  <h2>Are you sure you wish to delete your account?</h2>
+  <%= form_tag("/confirm_delete", method: "post") do %>
+    <input type="radio" name="confirm_delete" value="yes">Yes
+    <input type="radio" name="confirm_delete" value="no">No<br>
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit">
+    <% end %>
+</div>

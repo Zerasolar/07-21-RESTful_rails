@@ -1,0 +1,23 @@
+<div>
+  <h2>Users</h2>
+  <div>
+    <% if session[:user_id] %>
+      <%= form_tag("/users") do %>
+        <input type="hidden" name="log_out" value="true">
+        <input type="submit" value="Log Out">
+        <% end %>
+      <a href="/edit_profile">Edit Profile</a>
+      <a href="/delete_profile">Delete Profile</a>
+    <% else %>
+      <a href="/login">Login</a>
+    <% end %>
+  </div>
+
+  <ul>
+    <% User.all.each do |user| %>
+    <li>
+      <a href="/users/<%= user.id %>"><%= user.email %></a>
+    </li>
+    <% end %>
+  </ul>
+</div>
