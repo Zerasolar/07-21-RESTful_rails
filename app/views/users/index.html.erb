@@ -2,10 +2,10 @@
   <h2>Users</h2>
   <div>
     <% if session[:user_id] %>
-      <%= form_tag("/users") do %>
+      <form action="/users">
         <input type="hidden" name="log_out" value="true">
         <input type="submit" value="Log Out">
-        <% end %>
+      </form>
       <a href="/edit_profile">Edit Profile</a>
       <a href="/delete_profile">Delete Profile</a>
     <% else %>

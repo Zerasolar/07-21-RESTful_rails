@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   
   post "/authenticate_login" => 'users#authenticate_login'
   
-  get "/users/new" => "users#new_form"
+  get "/users/new" => "users#new"
   
-  post "/users" => "users#new"
+  post "/users" => "users#save_new"
   
   get "/delete_profile" => "users#delete"
 

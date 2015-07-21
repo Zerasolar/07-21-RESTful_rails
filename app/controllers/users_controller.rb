@@ -31,12 +31,11 @@ class UsersController < ApplicationController
     end
   end
   
-  def new_form
+  def new
     @new_user = User.new
-    render "users/new"
   end
   
-  def new
+  def save_new
     email = params["users"]["email"]
     password = BCrypt::Password.create(params["users"]["password"])
     @new_user = User.create({"email" => email, "password" => password})
