@@ -16,9 +16,23 @@ Rails.application.routes.draw do
     
   get "/edit_profile" => "users#edit_profile"
   
-  put "/users/@user.id" => "users#edited_profile"
+  put "/edited_profile" => "users#edited_profile"
+  
+  # get "/users_info"
+  
+  get "/stories" => 'stories#index'
 
-
+  get "/new_story" => 'stories#new'
+  
+  post "/stories" => 'stories#save_new'
+  
+  delete "/delete_story" => 'stories#delete'
+  
+  get "/edit_story" => 'stories#edit_story'
+  
+  put "/edited_story" => 'stories#edited_story'
+  
+  # get
   
   
   # The priority is based upon order of creation: first created -> highest priority.

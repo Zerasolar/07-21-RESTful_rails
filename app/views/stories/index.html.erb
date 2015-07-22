@@ -1,0 +1,24 @@
+<div>
+  <h2><%=@user.email%></h2>
+
+  <ul>
+    <% @user_stories.all.each do |story| %>
+    <li>
+      <a href="/stories"><%= story.title %></a>
+      <div>
+        <% if @current_user == true %>
+        <form action="/edit_story">
+          <input type="submit" value="Edit">
+          <input type="hidden" name="stories[id]" value="<%= story.id%>">
+        </form>
+        <%= form_tag("/delete_story", method: "post") do %>
+          <input type="submit" value="Delete">
+          <input type="hidden" name="stories[id]" value="<%= story.id %>">
+          <input type="hidden" name="_method" value="delete">
+        <%end%>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
